@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.tsx';
+@source '../**/*.ts';
+@source '../**/*.jsx';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Sora', 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+    --color-canvas: #f4f6fa;
+    --color-surface: #ffffff;
+    --color-ink: #12141a;
+    --color-muted: #5c6470;
+
+    --color-coral-50: #fff5f2;
+    --color-coral-100: #ffe6e0;
+    --color-coral-200: #ffc9bd;
+    --color-coral-400: #ff6e52;
+    --color-coral-500: #ff4d2e;
+    --color-coral-600: #e04500;
+    --color-coral-700: #c23c00;
+
+    --color-cyan-50: #ecfeff;
+    --color-cyan-100: #d9f6fc;
+    --color-cyan-300: #67e8f9;
+    --color-cyan-400: #22d3ee;
+    --color-cyan-500: #00b4d8;
+    --color-cyan-600: #0891b2;
+    --color-cyan-700: #0e7490;
+
+    /* Compat aliases used in older Breeze screens */
+    --color-nebula-300: #67e8f9;
+    --color-nebula-400: #22d3ee;
+    --color-nebula-500: #00b4d8;
+    --color-ink-700: #1c2740;
+    --color-ink-800: #121a2b;
+    --color-ink-900: #0b1220;
+    --color-ink-950: #070b14;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-canvas text-ink antialiased;
+    }
+
+    ::selection {
+        background: color-mix(in srgb, var(--color-coral-500) 28%, white);
+        color: var(--color-ink);
+    }
+}
+
+@layer utilities {
+    .font-display {
+        font-family: var(--font-display);
+    }
+
+    .hero-mesh {
+        background:
+            radial-gradient(ellipse 80% 60% at 15% 20%, rgb(255 77 46 / 0.28), transparent 55%),
+            radial-gradient(ellipse 70% 55% at 90% 10%, rgb(0 180 216 / 0.22), transparent 50%),
+            radial-gradient(ellipse 55% 45% at 70% 85%, rgb(255 110 82 / 0.16), transparent 55%),
+            radial-gradient(ellipse 40% 35% at 20% 90%, rgb(103 232 249 / 0.18), transparent 50%),
+            linear-gradient(180deg, #fff8f5 0%, #f4f6fa 55%, #eef2f8 100%);
+    }
+
+    .section-bg-services {
+        background:
+            radial-gradient(ellipse 60% 40% at 10% 0%, rgb(0 180 216 / 0.1), transparent 55%),
+            radial-gradient(ellipse 50% 35% at 100% 80%, rgb(255 77 46 / 0.08), transparent 50%),
+            #f4f6fa;
+    }
+
+    .section-bg-about {
+        background:
+            radial-gradient(ellipse 55% 45% at 100% 15%, rgb(255 77 46 / 0.1), transparent 55%),
+            radial-gradient(ellipse 45% 40% at 0% 85%, rgb(0 180 216 / 0.1), transparent 50%),
+            #ffffff;
+    }
+
+    .section-bg-process {
+        background:
+            radial-gradient(ellipse 50% 35% at 50% 0%, rgb(0 180 216 / 0.12), transparent 50%),
+            radial-gradient(ellipse 40% 30% at 0% 100%, rgb(255 110 82 / 0.1), transparent 50%),
+            #f4f6fa;
+    }
+
+    .section-bg-contact {
+        background:
+            radial-gradient(ellipse 70% 50% at 50% 100%, rgb(255 77 46 / 0.14), transparent 55%),
+            radial-gradient(ellipse 40% 35% at 10% 20%, rgb(0 180 216 / 0.1), transparent 50%),
+            #ffffff;
+    }
+}
