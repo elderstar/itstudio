@@ -26,6 +26,8 @@ class OrderResource extends Resource
 
     protected static ?string $modelLabel = 'Заказ';
 
+    protected static ?string $pluralModelLabel = 'Заказы';
+
     protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
@@ -96,6 +98,8 @@ class OrderResource extends Resource
                         Notification::make()->title('Набор закрыт')->success()->send();
                     }),
                 Tables\Actions\Action::make('addParticipant')
+                    // TODO(cabinet-chat-participant): при add — выбрать категорию ответственности
+                    // (Бекенд/Фронтенд/Дизайн…). docs/CABINET_UX.md#chat-participant-category--cabinet-chat-participant
                     ->label('Добавить участника')
                     ->form([
                         Forms\Components\Select::make('user_id')

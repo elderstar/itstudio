@@ -40,6 +40,11 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
             ])
             ->brandName('CodeNebula Admin')
+            ->darkMode(true, isForced: true)
+            // TODO(admin-layout): расширить main до макс. ширины и свернуть aside до иконок.
+            // ->maxContentWidth(MaxWidth::Full)              // use Filament\Support\Enums\MaxWidth
+            // ->sidebarCollapsibleOnDesktop()                 // aside: только иконки, лейблы по hover/expand
+            // при необходимости: ->collapsedSidebarWidth('4.5rem')
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

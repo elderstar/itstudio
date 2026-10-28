@@ -25,7 +25,8 @@ Route::get('/dashboard', function () {
     $user = auth()->user();
 
     if ($user?->hasRole('admin')) {
-        return redirect('/admin');
+        // Full document visit so Filament head scripts (dark theme) apply on first paint.
+        return Inertia::location('/admin');
     }
 
     if ($user?->isApprovedCoder()) {

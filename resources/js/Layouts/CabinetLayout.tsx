@@ -5,6 +5,11 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode, useState } from 'react';
 
+/*
+ * TODO(cabinet-nav): меню и визуал по ролям — docs/CABINET_UX.md#navigation--roles--cabinet-nav
+ * Клиенту не показывать анкету кодера; админу — ссылка в /admin; бренд вместо Breeze slate.
+ */
+
 export default function CabinetLayout({
     header,
     children,

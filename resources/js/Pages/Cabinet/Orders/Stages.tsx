@@ -13,6 +13,11 @@ import '@xyflow/react/dist/style.css';
 import { Head, router } from '@inertiajs/react';
 import { useMemo } from 'react';
 
+/*
+ * TODO(cabinet-stages): для клиента — «текущий шаг / что согласовать» рядом с графом.
+ * docs/CABINET_UX.md#stages-clarity--cabinet-stages
+ */
+
 type Stage = {
     id: string;
     title: string;

@@ -1,29 +1,43 @@
 import SectionBackdrop from '@/Components/Home/SectionBackdrop';
 
+/*
+ * TODO(services-marks): заменить текстовые mark ('Web' / 'Fast' / 'Safe' / 'UE5') на визуальные знаки.
+ *
+ * Сделать:
+ *   - сгенерировать или нарисовать 4 иконки/изображения (SVG предпочтительно; webp — если нужен
+ *     объём/иллюстрация, не line-icon);
+ *   - единый стиль под бренд (coral/cyan, airy, без generic purple SaaS-набора);
+ *   - положить в /public/imgs/services/ (или resources/js/Components/Home/icons/) и подключить
+ *     вместо {service.mark} — <img> / inline SVG / компонент иконки;
+ *   - сохранить tint-подложку или заменить на soft-circle вокруг иконки;
+ *   - alt по смыслу услуги (не пустой), размеры фиксированные (напр. 40–48px).
+ *
+ * Пока mark остаётся временным текстовым бейджем.
+ */
 const services = [
     {
         title: 'Сайты и лендинги',
         body: 'Быстрые адаптивные сайты с понятной структурой и удобной админкой.',
         tint: 'bg-cyan-100 text-cyan-700',
-        mark: 'Web',
+        mark: 'Web', // TODO: → icon/webp
     },
     {
         title: 'Производительность',
         body: 'Оптимизация загрузки, кеширование и архитектура без лишнего веса.',
         tint: 'bg-coral-100 text-coral-600',
-        mark: 'Fast',
+        mark: 'Fast', // TODO: → icon/webp
     },
     {
         title: 'Безопасность',
         body: 'Валидация, защита форм и аккуратные интеграции с первого дня.',
         tint: 'bg-cyan-100 text-cyan-700',
-        mark: 'Safe',
+        mark: 'Safe', // TODO: → icon/webp
     },
     {
         title: 'Приложения и UE5',
         body: 'Веб- и мобильные приложения, прототипы и механики на Unreal Engine 5.',
         tint: 'bg-coral-100 text-coral-600',
-        mark: 'UE5',
+        mark: 'UE5', // TODO: → icon/webp
     },
 ];
 

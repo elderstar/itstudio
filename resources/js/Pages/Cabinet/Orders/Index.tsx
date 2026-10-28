@@ -1,6 +1,11 @@
 import CabinetLayout from '@/Layouts/CabinetLayout';
 import { Head, Link } from '@inertiajs/react';
 
+/*
+ * TODO(cabinet-empty): empty state «пока нет заказов» + следующий шаг для клиента.
+ * docs/CABINET_UX.md#empty-states--onboarding--cabinet-empty
+ */
+
 type OrderRow = {
     id: number;
     title: string;

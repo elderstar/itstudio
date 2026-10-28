@@ -46,3 +46,7 @@
 - Notifications: `NewOrderMessage`, `CoderApplicationReviewed`, `JoinRequestReviewed`, `StageStatusChanged`
 - Audit: Spatie Activity Log on orders / applications / join requests
 - Close recruiting: Filament action on Order
+
+## Next (UX)
+
+Полировка кабинета, роли в меню, чат-участники как категории команды (без скиллов для клиента): **`docs/CABINET_UX.md`**.

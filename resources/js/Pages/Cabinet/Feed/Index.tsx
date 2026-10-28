@@ -2,6 +2,11 @@ import CabinetLayout from '@/Layouts/CabinetLayout';
 import { Head, Link, router } from '@inertiajs/react';
 import { FormEvent, useState } from 'react';
 
+/*
+ * TODO(cabinet-empty): empty state ленты + mobile layout.
+ * docs/CABINET_UX.md#empty-states--onboarding--cabinet-empty
+ */
+
 type OrderCard = {
     id: number;
     title: string;

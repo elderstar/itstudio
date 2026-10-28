@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class OrderParticipant extends Model
 {
+    // TODO(cabinet-chat-participant): поле категории ответственности в заказе
+    // (specialty / responsibility_label: Бекенд, Фронтенд, Дизайн…) — не путать с role client|coder.
+    // Клиенту в чате только name + категория; без skills. docs/CABINET_UX.md#chat-participant-category--cabinet-chat-participant
+
     protected $fillable = [
         'order_id',
         'user_id',

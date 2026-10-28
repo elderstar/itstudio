@@ -35,6 +35,7 @@
     "dependencies": {
         "@xyflow/react": "^12.12.0",
         "laravel-echo": "^2.6.1",
+        "motion": "^14.6.0",
         "pusher-js": "^8.6.0"
     }
 }
