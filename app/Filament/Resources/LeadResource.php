@@ -23,6 +23,8 @@ class LeadResource extends Resource
 
     protected static ?string $modelLabel = 'Лид';
 
+    protected static ?string $pluralModelLabel = 'Лиды';
+
     protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
@@ -30,9 +32,19 @@ class LeadResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required()->maxLength(255),
-                Forms\Components\TextInput::make('email')->email()->required()->maxLength(255),
+                Forms\Components\TextInput::make('email')->email()->maxLength(255),
                 Forms\Components\TextInput::make('phone')->tel()->maxLength(255),
+                Forms\Components\TextInput::make('intent')->label('Намерение')->disabled(),
                 Forms\Components\Textarea::make('message')->required()->columnSpanFull(),
+                Forms\Components\Textarea::make('intake_preview')
+                    ->label('Intake')
+                    ->disabled()
+                    ->rows(8)
+                    ->dehydrated(false)
+                    ->formatStateUsing(fn (?Lead $record) => $record
+                        ? json_encode($record->intake, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+                        : null)
+                    ->columnSpanFull(),
                 Forms\Components\Select::make('status')
                     ->options([
                         'new' => 'Новый',
@@ -50,6 +62,10 @@ class LeadResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('email')->searchable(),
+                Tables\Columns\TextColumn::make('intent')
+                    ->label('Намерение')
+                    ->formatStateUsing(fn (?string $state, Lead $record) => $record->intentLabel())
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('phone'),
                 Tables\Columns\TextColumn::make('status')->badge(),
                 Tables\Columns\TextColumn::make('created_at')->dateTime()->sortable(),
@@ -59,6 +75,8 @@ class LeadResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                // TODO(cabinet-lead-handoff): после convert — invite/письмо клиенту в кабинет.
+                // docs/CABINET_UX.md#lead--client-path--cabinet-lead-handoff
                 Tables\Actions\Action::make('convert')
                     ->label('Создать заказ')
                     ->icon('heroicon-o-shopping-bag')

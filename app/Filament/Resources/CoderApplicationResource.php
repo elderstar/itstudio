@@ -22,6 +22,8 @@ class CoderApplicationResource extends Resource
 
     protected static ?string $modelLabel = 'Анкета';
 
+    protected static ?string $pluralModelLabel = 'Анкеты кодеров';
+
     protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form

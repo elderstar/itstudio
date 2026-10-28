@@ -22,6 +22,8 @@ class OrderJoinRequestResource extends Resource
 
     protected static ?string $modelLabel = 'Заявка';
 
+    protected static ?string $pluralModelLabel = 'Заявки в заказы';
+
     protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form

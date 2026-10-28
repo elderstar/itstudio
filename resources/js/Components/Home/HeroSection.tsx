@@ -35,6 +35,15 @@ export default function HeroSection({ hero_image }: HeroSectionProps) {
 
                 <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
                     <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-coral-200/60 via-cyan-100/50 to-transparent blur-2xl" />
+                    {/*
+                      TODO(hero-image): текущее фото выглядит чужим к светлому coral/cyan UI (DESIGN.md).
+                      Подобрать другое визуальное ядро секции:
+                        - векторная иллюстрация / композиция (SVG) или PNG с прозрачностью под hero-mesh;
+                        - светлая палитра, без «стокового» тёмного/чужого фото;
+                        - тема: сайты / продукт / UE5, без clutter и без чужого бренда;
+                        - обновить источник в HomeController / public/imgs/ и alt (осмысленный, не пустой);
+                        - проверить crop aspect-[4/5] и карточку-оверлей снизу после замены.
+                    */}
                     <img
                         src={hero_image}
                         alt=""

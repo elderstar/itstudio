@@ -3,7 +3,21 @@ import CabinetLayout from '@/Layouts/CabinetLayout';
 import { Head, router, usePage } from '@inertiajs/react';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 
-type ChatUser = { id: number; name: string; avatar_url?: string | null };
+/*
+ * TODO(cabinet-chat-participant): клик по участнику → tooltip/карточка Имя + категория
+ * (Бекенд/Фронтенд/Дизайн…), без skills/профиля. docs/CABINET_UX.md#chat-participant-category--cabinet-chat-participant
+ *
+ * TODO(cabinet-chat-realtime): индикатор offline Echo + fallback. docs/CABINET_UX.md#chat-realtime-resilience--cabinet-chat-realtime
+ *
+ * TODO(cabinet-empty): empty state пустого чата. docs/CABINET_UX.md#empty-states--onboarding--cabinet-empty
+ */
+
+type ChatUser = {
+    id: number;
+    name: string;
+    avatar_url?: string | null;
+    // TODO(cabinet-chat-participant): specialty_label?: string — категория в заказе
+};
 type ChatMessage = {
     id: number;
     body: string;
@@ -164,6 +178,7 @@ export default function OrderChat({
     );
 }
 
+// TODO(cabinet-chat-participant): по клику — tooltip/карточка {name, specialty_label}.
 function Avatar({ user }: { user: ChatUser }) {
     if (user.avatar_url) {
         return (

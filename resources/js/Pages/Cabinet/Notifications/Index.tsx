@@ -1,6 +1,13 @@
 import CabinetLayout from '@/Layouts/CabinetLayout';
 import { Head, router } from '@inertiajs/react';
 
+/*
+ * TODO(cabinet-notifications): клик → заказ/чат; понятные заголовки.
+ * docs/CABINET_UX.md#notifications-ux--cabinet-notifications
+ *
+ * TODO(cabinet-empty): empty state списка. docs/CABINET_UX.md#empty-states--onboarding--cabinet-empty
+ */
+
 type NotificationRow = {
     id: string;
     data: Record<string, unknown>;

@@ -20,6 +20,8 @@ class SpecialistTagResource extends Resource
 
     protected static ?string $modelLabel = 'Тег';
 
+    protected static ?string $pluralModelLabel = 'Теги';
+
     protected static ?int $navigationSort = 5;
 
     public static function form(Form $form): Form
